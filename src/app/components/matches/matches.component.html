@@ -1,0 +1,10 @@
+<app-banner [title]="'Matches'"></app-banner>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 " *ngFor="let m of matches">
+
+      <app-match [match]="m" (passId)="parentDeleteMatch($event)"></app-match>
+
+    </div>
+  </div>
+</div>

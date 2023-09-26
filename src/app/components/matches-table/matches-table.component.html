@@ -1,0 +1,38 @@
+<div class="site-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">id</th>
+                            <th scope="col">Team One</th>
+                            <th scope="col">Team Two</th>
+                            <th scope="col">Scoore One</th>
+                            <th scope="col">Scoore Two</th>
+                            <th scope="col">Delete</th>
+                            <th scope="col">Modifier</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let m of matches" appColor>
+                            <th scope="row">{{m.id}}</th>
+                            <td>{{m.teamOne}}</td>
+                            <td>{{m.teamTwo}}</td>
+                            <td>{{m.scoreOne}}</td>
+                            <td>{{m.scoreTwo}}</td>
+                            <td>
+                                <button class="btn btn-danger" (click)="deleteMatch(m.id)">Delete</button>
+                            </td>
+                            <td>
+                                <button class="btn btn-info" (click)="navigateTo(m.id)">Edit</button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>

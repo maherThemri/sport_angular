@@ -1,0 +1,14 @@
+.win{
+font-size: 50px;
+color: green;
+}
+
+.loss{
+    font-size: 40px;
+    color: blue;
+}
+
+.draw{
+    font-size: 30px;
+    color: yellow;
+}

@@ -1,0 +1,32 @@
+<app-banner title="Add Match"></app-banner>
+
+
+<div class="site-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <form #addMatchForm="ngForm" (ngSubmit)="addEditMatch()">
+          <!-- <div class="form-group">
+              <input type="text" class="form-control" placeholder="Team One" (change)="testChange($event)">
+            </div> -->
+          <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="match.teamOne" name="a" placeholder="Team One">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="match.teamTwo" name="b" placeholder="Team two">
+          </div>
+          <div class="form-group">
+            <input type="number" class="form-control" [(ngModel)]="match.scoreOne" name="c" placeholder="Scoore One">
+          </div>
+          <div class="form-group">
+            <input type="number" class="form-control" [(ngModel)]="match.scoreTwo" name="d" placeholder="Scoore Two">
+          </div>
+
+          <!-- <button type="button" class="btn btn-primary py-3 px-5" (click)="addMatch('olfa')"> Add Match</button> -->
+          <button type="submit" class="btn btn-primary py-3 px-5"> {{title}}</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

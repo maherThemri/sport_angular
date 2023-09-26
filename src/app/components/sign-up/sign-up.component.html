@@ -1,0 +1,61 @@
+<app-banner [title]="'Sign UP'"></app-banner>
+
+
+<div class="site-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <form [formGroup]="signupForm">
+                    <!-- <div class="form-group">
+              <input type="text" class="form-control" placeholder="Team One" (change)="testChange($event)">
+            </div> -->
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="firstName" placeholder="First Name">
+                        <div class="text-danger"
+                            *ngIf="signupForm.controls['firstName'].invalid && (signupForm.controls['firstName'].dirty || signupForm.controls['firstName'].touched)">
+                            <div *ngIf="signupForm.controls['firstName'].errors?.['required']"> Obligatoire </div>
+                            <div *ngIf="signupForm.controls['firstName'].errors?.['minlength']"> Min lenght 3 </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="lastName" placeholder="Last Name">
+                        <div class="text-danger"
+                            *ngIf="signupForm.controls['lastName'].invalid && (signupForm.controls['lastName'].dirty || signupForm.controls['lastName'].touched)">
+                            <div *ngIf="signupForm.controls['lastName'].errors?.['required']"> Obligatoire </div>
+                            <div *ngIf="signupForm.controls['lastName'].errors?.['minlength']"> Min lenght 3 </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" formControlName="email" placeholder="Email">
+                        <div class="text-danger"
+                            *ngIf="signupForm.controls['email'].invalid && (signupForm.controls['email'].dirty || signupForm.controls['email'].touched)">
+
+                            <div *ngIf="signupForm.controls['email'].errors?.['required']"> Obligatoire </div>
+                            <div *ngIf="signupForm.controls['email'].errors?.['email']"> Format email invalide </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" formControlName="password" placeholder="Password">
+                        <div class="text-danger"
+                            *ngIf="signupForm.controls['password'].invalid && (signupForm.controls['password'].dirty || signupForm.controls['password'].touched)">
+
+                            <div *ngIf="signupForm.controls['password'].errors?.['required']"> Obligatoire </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" formControlName="cpassword" placeholder="CPassword">
+                        <div class="text-danger"
+                            *ngIf="signupForm.controls['cpassword'].invalid && (signupForm.controls['cpassword'].dirty || signupForm.controls['cpassword'].touched)">
+
+                            <div *ngIf="signupForm.controls['cpassword'].errors?.['required']"> Obligatoire </div>
+                            <div *ngIf="signupForm.controls['cpassword'].errors?.['mustMatch']"> match invalide </div>
+                        </div>
+                    </div>
+                    <button type="button" [disabled]="signupForm.invalid" class="btn btn-primary py-3 px-5"
+                        (click)="signup()">Sign Up</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
